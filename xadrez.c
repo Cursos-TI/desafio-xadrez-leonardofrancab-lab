@@ -9,6 +9,8 @@ int main() {
     int tor = 1;
     int bis = 1;
     int rai = 1;
+    int cav = 1;
+    int i = 1; // para uso da estrutura WHILE
 
     printf("**** Tutorial Xadrez****\n\n");
     //printf("****Escolha a peça que voce quer saber o movimento.****\n\n");
@@ -33,16 +35,37 @@ int main() {
 
     // Implementação de Movimentação da Rainha com for
      printf("\n Movimento da rainha\n");
-    for (rai; rai <= 8; rai++)
+     for (rai; rai <= 8; rai++)
     {
       printf("ESQUERDA\n");  
+    }    
+    
+    // Implementação de Movimentação do cavalo com for aninhado
+     printf("\n Movimento do cavalo\n");
+    // Estrutura em FOR
+    for (cav; cav <= 1; cav++) {
+      for ( int i = 1 ; i <= 2; i++) {
+        printf("BAIXO\n");
+      }  
+      printf("ESQUERDA\n"); 
     }
     
-    
-    
-    
-    
-    
+    // estrutura em WHILE
+    //while (cav < 2) {
+    //  while (i <= 2) {
+    //    printf ("BAIXO\n");
+    //    i++;
+    //  }
+    //  printf("ESQUERDA\n");  
+    //  cav++;
+    //}
+  
+    // Estrutura em DO WHILE
+    //do {
+    //  printf("BAIXO\n");
+    //  cav++;
+    //} while (cav <=2);
+    //printf("ESQUERDA\n");
     
     
     
