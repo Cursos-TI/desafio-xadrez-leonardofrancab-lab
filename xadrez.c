@@ -4,12 +4,44 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+//Usando recursividade na movimentação das peças
+void recursivotorre (int n) {
+  if (n > 0)
+    {
+      printf("DIREITA\n");
+      recursivotorre (n - 1);  
+    }
+
+}
+
+//void recursivobispo (int n) {
+//  for (int i = 5; i > n; i--) {
+//    printf("CIMA\n");
+//    for (int x = 5; x > n; x--) {
+//      printf("direita\n");  
+//      }
+//    recursivobispo (n - 1);
+//    }    
+//  }
+  
+void recursivorainha (int n) {
+  if (n > 0)
+    {
+      printf("ESQUERDA\n");
+      recursivorainha (n - 1);  
+    }
+
+}
+
+
 int main() { 
 
-    int tor = 1;
+    //int tor = 1;
+    int tor = 5;
+    //int bis = 1;
     int bis = 1;
-    int rai = 1;
-    int cav = 1;
+    //int rai = 1;
+    int rai = 8;
     int i = 1; // para uso da estrutura WHILE
 
     printf("**** Tutorial Xadrez****\n\n");
@@ -18,16 +50,22 @@ int main() {
     //printf("2 - Bispo\n");
     //printf("3 - Rainha\n");
 
-    // Implementação de Movimentação da torre com while
-    printf("\n Movimento da torre\n");
-    while (tor <= 5)
-    {
-      printf("DIREITA\n");
-      tor++;  
-    }
     
-    // Implementação de Movimentação do Bispo com do while
+    printf("\n Movimento da torre\n");
+    // Movimento com recursividade
+    recursivotorre(tor);
+    // Implementação de Movimentação da torre com while
+    //while (tor <= 5)
+    //{
+    //  printf("DIREITA\n");
+    //  tor++;  
+    //}
+    
+    
     printf("\n Movimento do bispo\n");
+    // Movimento com recursividade
+    //recursivobispo(bis);
+    //Implementação de Movimentação do Bispo com do while
     do {
     printf("DIAGONAL (CIMA, DIREITA)\n");
     bis++;  
@@ -35,21 +73,37 @@ int main() {
 
     // Implementação de Movimentação da Rainha com for
      printf("\n Movimento da rainha\n");
-     for (rai; rai <= 8; rai++)
-    {
-      printf("ESQUERDA\n");  
-    }    
+    // Movimento com recursividade
+    recursivorainha(rai);
+    // Implementação de Movimentação da Rainha com for
+    //for (rai; rai <= 8; rai++)
+    //{
+    //  printf("ESQUERDA\n");  
+    //}    
     
     // Implementação de Movimentação do cavalo com for aninhado
      printf("\n Movimento do cavalo\n");
     // Estrutura em FOR
-    for (cav; cav <= 1; cav++) {
-      for ( int i = 1 ; i <= 2; i++) {
-        printf("BAIXO\n");
-      }  
-      printf("ESQUERDA\n"); 
+    //for (cav; cav <= 1; cav++) {
+    //  for ( int i = 1 ; i <= 2; i++) {
+    //    printf("BAIXO\n");
+    //  }  
+    //  printf("ESQUERDA\n"); 
+    //}
+    // Utilizando for com multiplas variaveis
+    for (int cav = 0, cav2 = 0; cav <= 2 && cav2 <= 2; cav++, cav2++) {
+      if ( cav <= 1 && cav2 <= 1 ){
+        printf ("CIMA\n");
+      } else {
+        printf ("DIREITA\n");
+      }
     }
-    
+
+
+
+
+
+
     // estrutura em WHILE
     //while (cav < 2) {
     //  while (i <= 2) {
